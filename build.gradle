@@ -9,7 +9,7 @@ task hello {
 
     doLast {
         println 'Hello world! Sonar password is ' + System.getProperty('sonar.jdbc.password', 'unspecified')
-        versionfile.text = ''sonar.jdbc.password=' + System.getProperty('sonar.jdbc.password', 'unspecified')
+        versionfile.text = 'sonar.jdbc.password=' + System.getProperty('sonar.jdbc.password', 'unspecified')
     }
 }
 
