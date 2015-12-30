@@ -4,8 +4,12 @@ apply plugin: 'signing'
 apply plugin: 'codenarc'
 
 task hello {
+    ext.versionfile = new File('out/sonar.properties')
+    standardOutput = new ByteArrayOutputStream()
+
     doLast {
         println 'Hello world! Sonar password is ' + System.getProperty('sonar.jdbc.password', 'unspecified')
+        versionfile.text = ''sonar.jdbc.password=' + System.getProperty('sonar.jdbc.password', 'unspecified')
     }
 }
 
